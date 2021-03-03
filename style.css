@@ -1,0 +1,312 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka One", cursive;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+/*-------------------------UTILITY SECTION--------------------------*/
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  width: 120px;
+  height: 42px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  margin: 20px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+button::after {
+  content: "";
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  left: 0;
+  top: 50px;
+  background: rgba(255, 0, 0, 0.208);
+  border-radius: 100px 100px 0 0;
+  transition: all 0.9s ease;
+}
+button:hover::after {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  transform: scale(1.1);
+}
+
+button:active {
+  background: transparent;
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+}
+/*-------------------------NAV MENU SECTION--------------------------*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.263);
+  padding: 10px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+input[type="checkbox"]:checked ~ .container nav {
+  background: transparent;
+}
+nav .logo h2 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #505050;
+  cursor: pointer;
+  user-select: none;
+}
+input[type="checkbox"]:checked ~ .container nav .logo h2 {
+  color: white;
+}
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .menu ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+}
+nav .menu ul a {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #505050;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+input[type="checkbox"]:checked ~ .container nav .menu ul a {
+  color: white;
+}
+nav .menu ul a:hover {
+  color: red;
+}
+input[type="checkbox"]:checked ~ .container nav .menu ul a:hover {
+  color: red;
+}
+nav .menu ul a.active {
+  color: red;
+}
+input[type="checkbox"]:checked ~ .container nav .menu ul a:active {
+  color: red;
+}
+/*-------------------------TOGGLE SWITCH  SECTION--------------------------*/
+.content .toggle {
+  position: fixed;
+  right: 2%;
+  top: 2%;
+  background: #092c3e;
+  width: 45px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 5px;
+  cursor: pointer;
+  z-index: 2000;
+  transform: scale(0.9);
+}
+
+input[type="checkbox"]:checked ~ .container .toggle {
+  background: white;
+}
+.content .toggle i {
+  color: white;
+  font-size: 0.7rem;
+}
+input[type="checkbox"]:checked ~ .container .content .toggle i {
+  color: #092c3e;
+}
+.toggle .circle {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 0px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+input[type="checkbox"]:checked ~ .container .circle {
+  margin-left: 21px;
+  background: #092c3e;
+}
+/*-------------------------HOME LANDING PAGE SECTION--------------------------*/
+section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: 0 5% 0 15%;
+  overflow: hidden;
+}
+section::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 45%;
+  background: #eaeaea7e;
+}
+input[type="checkbox"]:checked ~ .container section {
+  background: #092c3e;
+}
+input[type="checkbox"]:checked ~ .container section:after {
+  background: #eaeaea0f;
+}
+section .detail {
+  color: #505050;
+  z-index: 10;
+  width: 100%;
+}
+input[type="checkbox"]:checked ~ .container .detail {
+  color: #f2f2f2;
+}
+section .detail p {
+  font-weight: 700;
+}
+section .detail h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+section .detail .type-sec {
+  display: flex;
+  align-items: center;
+}
+section .detail .type-sec .typing {
+  margin-left: 5px;
+  color: red;
+}
+section .detail h3 {
+  font-weight: 600;
+  max-width: 100%;
+  font-size: 1.8rem;
+}
+section .detail .typing {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid black;
+  animation: typing 5s steps(50) infinite;
+  width: 100%;
+}
+input[type="checkbox"]:checked ~ .container .typing {
+  border-right: 4px solid rgb(242, 242, 242);
+}
+/*-------------------------TYPING ANIMATION KEYFRAME SECTION--------------------------*/
+@keyframes typing {
+  0% {
+    width: 0ch;
+  }
+  50% {
+    width: 50ch;
+  }
+  100% {
+    width: 0ch;
+  }
+}
+/*-------------------------BUTTON SECTION--------------------------*/
+.btn button:nth-child(1) {
+  border: 1px solid black;
+}
+input[type="checkbox"]:checked ~ .outer .btn button:nth-child(1) {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.btn button:nth-child(2) {
+  background: #505050;
+  border: transparent;
+  color: white;
+}
+input[type="checkbox"]:checked ~ .outer .btn button:nth-child(2) {
+  background: white;
+  color: #092c3e;
+}
+.content .details {
+  width: 400px;
+  padding: 15px;
+  color: #092c3e;
+}
+input[type="checkbox"]:checked ~ .outer .details {
+  color: #fff;
+}
+section .img {
+  width: 50%;
+  z-index: 1;
+  margin: 10% 15% 0 0;
+}
+#swit {
+  display: none;
+}
+/*-------------------------MEDIA PAGE RESPONSIVENESS SECTION--------------------------*/
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+  section .detail h2 {
+    font-size: 2.5rem;
+  }
+  section .detail h3 {
+    font-size: 1rem;
+  }
+  section .detail .typing {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid black;
+    width: 25%;
+    animation: typing 5s steps(28) infinite;
+  }
+  @keyframes typing {
+    0% {
+      width: 0ch;
+    }
+    50% {
+      width: 28ch;
+    }
+    100% {
+      width: 0ch;
+    }
+  }
+  section .img {
+    position: absolute;
+    width: 100%;
+    margin: 10% 10% 0 0;
+    opacity: 0.5;
+  }
+}
+/*-------------------------MEDIA PAGE RESPONSIVENESS 2 SECTION--------------------------*/
+@media (max-width: 800px) {
+  section .img {
+    position: absolute;
+    width: 100%;
+    margin: 10% 15% 0 0;
+    opacity: 0.7;
+  }
+}
